@@ -40,7 +40,7 @@ public class TimelineServlet extends HttpServlet{
 			RequestDispatcher rd = request.getRequestDispatcher("timeline_view.jsp");
 			rd.forward(request, response);
 		} else {
-			//Error
+			response.sendError(500);
 		}
 	}
 }

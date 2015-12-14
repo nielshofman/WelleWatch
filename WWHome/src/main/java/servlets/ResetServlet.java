@@ -25,7 +25,7 @@ public class ResetServlet extends HttpServlet {
 			TableUtils.resetTableEntry(chipID);
 			response.sendRedirect("resetpage.html");
 		} else {
-			//Error
+			response.sendError(500);;
 		}
 	}
 }
