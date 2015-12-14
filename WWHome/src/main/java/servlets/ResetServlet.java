@@ -1,7 +1,6 @@
 package servlets;
 
 import java.io.IOException;
-import java.util.Enumeration;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -12,9 +11,7 @@ import control.TableUtils;
 
 public class ResetServlet extends HttpServlet {
 
-	/**
-	 * 
-	 */
+	private static final String ID = "chipID";
 	private static final long serialVersionUID = 1L;
 
 	public ResetServlet() {
@@ -23,15 +20,12 @@ public class ResetServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, 
 			HttpServletResponse response) throws ServletException, IOException {
-		Enumeration<String> params = request.getParameterNames();
-		String[] parameterList = new String[2];
-		int i = 0;
-		while(params.hasMoreElements() && i < 2) {
-			parameterList[i] = params.nextElement();
-			i++;
+		String chipID = request.getParameter(ID);
+		if (chipID != null) {
+			TableUtils.resetTableEntry(chipID);
+			response.sendRedirect("resetpage.html");
+		} else {
+			//Error
 		}
-		String chipID = parameterList[0];
-		TableUtils.resetTableEntry(chipID);
-		response.sendRedirect("resetpage.html");
 	}
 }
