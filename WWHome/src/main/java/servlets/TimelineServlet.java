@@ -27,14 +27,18 @@ public class TimelineServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest request, 
 			HttpServletResponse response) throws ServletException, IOException {
 		Enumeration<String> params = request.getParameterNames();
-		String[] parameterList = new String[2];
 		int i = 0;
+		String chipID = null;
+		String location = null;
 		while(params.hasMoreElements() && i < 2) {
-			parameterList[i] = params.nextElement();
+			if (i%2 == 1) { 
+				chipID = params.nextElement();
+			} else if (i%2 == 0) {
+				location = params.nextElement();
+			}
 			i++;
 		}
-		String chipID = parameterList[0];
-		String location = parameterList[1];
+		
 		TableUtils.changeTableEntry(chipID, location);
 		character = TableUtils.getCharacter(chipID);
 		timeline = TableUtils.getTimeline(chipID);
