@@ -7,14 +7,18 @@ public class Table {
 
 	private static final Table instance = new Table();
 	
-	private Map<String, Map<Integer, Boolean>> dataTable;
+	private Map<String, Map<String, Boolean>> dataTable;
 	
 	public Table() {
-		this.dataTable = new HashMap<String, Map<Integer, Boolean>>();
+		this.dataTable = new HashMap<String, Map<String, Boolean>>();
 	}
 	
-	public Map<String, Map<Integer, Boolean>> getDataTable() {
+	public synchronized Map<String, Map<String, Boolean>> getDataTable() {
 		return dataTable;
+	}
+	
+	public synchronized void setDataTable(Map<String, Map<String, Boolean>> map) {
+		dataTable = map;
 	}
 	
 	public static Table getInstance() {
