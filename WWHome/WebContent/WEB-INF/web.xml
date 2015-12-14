@@ -1,3 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app id="WebApp_ID" version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+	<description>
+		Servlets for museum system.
+	</description>
+	<display-name>Twentse Welle</display-name>
+	<session-config>
+		<cookie-config>
+			<http-only>true</http-only>
+		</cookie-config>
+	</session-config>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/errorpage.html</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/errorpage.html</location>
+	</error-page>
+	<servlet>
+		<servlet-name>TimelineServlet</servlet-name>
+		<servlet-class>servlets.TimelineServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ResetServlet</servlet-name>
+		<servlet-class>servlets.ResetServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>TimelineServlet</servlet-name>
+		<url-pattern>/timeline</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ResetServlet</servlet-name>
+		<url-pattern>/reset</url-pattern>
+	</servlet-mapping>
 </web-app>
