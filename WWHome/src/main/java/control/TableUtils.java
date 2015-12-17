@@ -71,7 +71,6 @@ public class TableUtils {
 	public static synchronized void changeTableEntry(String chipID, String location) {
 		Map<String, Map<String, Boolean>> map = table.getDataTable();
 		if (map.containsKey(chipID)) {
-			System.out.println("oud");
 			Map<String, Boolean> columns = map.get(chipID);
 			if (columns.containsKey(location)) {
 				columns.replace(location, true);
@@ -80,7 +79,6 @@ public class TableUtils {
 				//Error
 			}
 		} else {
-			System.out.println("new");
 			Map<String, Boolean> columns = getStandardMap();
 			if (columns.containsKey(location)) {
 				columns.replace(location, true);
