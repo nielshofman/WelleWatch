@@ -11,13 +11,20 @@
 </head>
 <body>
 <div class="img">
-		<img src="/img/2.jpg" alt="Test" width="318" height="466">
-
-<!--  		<img src="img/testimage.gif" alt="Test" width="1900" height="1060">
+  		<img src="img/testimage.gif" alt="Test" width="1900" height="1060">
+  		<% if (timeline.isPeriod1()) { %>
+		<img src="img/1.jpg" alt="Test" width="318" height="466">
+		<% } if (timeline.isPeriod2()) { %>
+		<img src="img/2.jpg" alt="Test" width="318" height="466">
+		<% } if (timeline.isPeriod3()) { %>
 		<img src="img/3.jpg" alt="Test" width="318" height="466">
+		<% } if (timeline.isPeriod4()) { %>
 		<img src="img/4.jpg" alt="Test" width="318" height="466">
+		<% } if (timeline.isPeriod5()) { %>
 		<img src="img/5.jpg" alt="Test" width="318" height="466">
-		<img src="img/6.jpg" alt="Test" width="318" height="466">-->
+		<% } if (timeline.isPeriod6()) { %>
+		<img src="img/6.jpg" alt="Test" width="318" height="466">
+		<% } %>
 </div>
 </body>
 </html>
