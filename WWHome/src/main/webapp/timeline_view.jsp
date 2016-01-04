@@ -8,9 +8,16 @@
 <jsp:useBean id="avatar" class="model.Avatar" scope="request"></jsp:useBean>
 <jsp:useBean id="timeline" class="model.Timeline" scope="request"></jsp:useBean>
 <title>Time line</title>
-
 </head>
 <body>
+<div class="img">
+		<img src="/img/2.jpg" alt="Test" width="318" height="466">
 
+<!--  		<img src="img/testimage.gif" alt="Test" width="1900" height="1060">
+		<img src="img/3.jpg" alt="Test" width="318" height="466">
+		<img src="img/4.jpg" alt="Test" width="318" height="466">
+		<img src="img/5.jpg" alt="Test" width="318" height="466">
+		<img src="img/6.jpg" alt="Test" width="318" height="466">-->
+</div>
 </body>
 </html>
