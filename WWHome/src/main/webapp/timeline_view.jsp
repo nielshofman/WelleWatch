@@ -56,7 +56,7 @@ div.six {
 		</div>
 	<% } if (timeline.isPeriod3()) { %>
 		<div class="three">
-			<img src="img/3.jpg" alt="Test" width="240" height="480">
+			<img src="img/farmer!.png" alt="Test" width="240" height="480">
 		</div>
 	<% } if (timeline.isPeriod4()) { %>
 		<div class="four">
@@ -68,7 +68,7 @@ div.six {
 		</div>
 	<% } if (timeline.isPeriod6()) { %>
 		<div class="six">
-			<img src="img/6.jpg" alt="Test" width="240" height="480">
+			<img src="img/man_2.png" alt="Test" width="240" height="480">
 		</div>
 	<% } %>
 </body>
