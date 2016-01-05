@@ -20,12 +20,12 @@ div.one {
 }
 div.two {
     position: fixed;
-    bottom: 68;
+    bottom: 50;
     right: 1272;
 }
 div.three {
     position: fixed;
-    bottom: 68;
+    bottom: 50;
     right: 954;
 }
 div.four {
@@ -35,12 +35,12 @@ div.four {
 }
 div.five {
     position: fixed;
-    bottom: 68;
+    bottom: 50;
     right: 318;
 }
 div.six {
     position: fixed;
-    bottom: 68;
+    bottom: 50;
     right: 0;
 }
 </style>
@@ -52,23 +52,23 @@ div.six {
 		<img src="img/Caveman_3.png" alt="Test" width="240" height="480"></div>
 	<% } if (timeline.isPeriod2()) { %>
 		<div class="two">
-			<img src="img/2.png" alt="Test" width="60" height="120">
+			<img src="img/2.png" alt="Test" width="240" height="480">
 		</div>
 	<% } if (timeline.isPeriod3()) { %>
 		<div class="three">
-			<img src="img/3.jpg" alt="Test" width="60" height="120">
+			<img src="img/3.jpg" alt="Test" width="240" height="480">
 		</div>
 	<% } if (timeline.isPeriod4()) { %>
 		<div class="four">
-			<img src="img/4.png" alt="Test" width="60" height="120">
+			<img src="img/4.png" alt="Test" width="240" height="480">
 		</div>
 	<% } if (timeline.isPeriod5()) { %>
 		<div class="five">
-			<img src="img/5.jpg" alt="Test" width="60" height="120">
+			<img src="img/industrie_final.png" alt="Test" width="240" height="480">
 		</div>
 	<% } if (timeline.isPeriod6()) { %>
 		<div class="six">
-			<img src="img/6.jpg" alt="Test" width="60" height="120">
+			<img src="img/6.jpg" alt="Test" width="240" height="480">
 		</div>
 	<% } %>
 </body>
