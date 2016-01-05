@@ -7,7 +7,7 @@ public class Table {
 
 	private static final Table instance = new Table();
 	
-	private Map<String, Map<String, Boolean>> dataTable;
+	protected Map<String, Map<String, Boolean>> dataTable;
 	
 	public Table() {
 		this.dataTable = new HashMap<String, Map<String, Boolean>>();

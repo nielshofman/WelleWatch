@@ -20,7 +20,7 @@ div.one {
 }
 div.two {
     position: fixed;
-    bottom: 50;
+    bottom: 25;
     right: 1272;
 }
 div.three {
@@ -35,13 +35,13 @@ div.four {
 }
 div.five {
     position: fixed;
-    bottom: 50;
+    bottom: 30;
     right: 318;
 }
 div.six {
     position: fixed;
     bottom: 50;
-    right: 0;
+    right: 10;
 }
 </style>
 </head>
@@ -52,7 +52,7 @@ div.six {
 		<img src="img/Caveman_3.png" alt="Test" width="240" height="480"></div>
 	<% } if (timeline.isPeriod2()) { %>
 		<div class="two">
-			<img src="img/2.png" alt="Test" width="240" height="480">
+			<img src="img/hunter.png" alt="Test" width="240" height="480">
 		</div>
 	<% } if (timeline.isPeriod3()) { %>
 		<div class="three">
