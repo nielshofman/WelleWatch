@@ -72,7 +72,7 @@ div.six {
 		</div>
 	<% } if (timeline.isPeriod4()) { %>
 		<div class="four">
-			<img src="img/4.jpg" alt="Test" width="318" height="466">
+			<img src="img/knight.png" alt="Test" width="318" height="466">
 		</div>
 	<% } if (timeline.isPeriod5()) { %>
 		<div class="five">
