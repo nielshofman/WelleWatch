@@ -28,6 +28,10 @@ public class TableUtils {
 		return result;
 	}
 	
+	public static synchronized void setLastKnownPosition(String location, String chipID) {
+		table.setLastKnownChipOnLocation(location, chipID);
+	}
+	
 	public static synchronized Avatar getCharacter(String chipID) {
 		Map<String, Map<String,Boolean>> map = table.getDataTable();
 		Map<String,Boolean> entries;
@@ -88,6 +92,10 @@ public class TableUtils {
 			}
 		}
 		table.setDataTable(map);
+	}
+	
+	public static synchronized Table getTable() {
+		return table;
 	}
 	
 	public static Map<String, Boolean> getStandardMap() {

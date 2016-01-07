@@ -22,15 +22,15 @@
 		<servlet-class>servlets.TimelineServlet</servlet-class>
 	</servlet>
 	<servlet>
-		<servlet-name>ResetServlet</servlet-name>
-		<servlet-class>servlets.ResetServlet</servlet-class>
+		<servlet-name>SetTimeLineServlet</servlet-name>
+		<servlet-class>servlets.SetTimeLineServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>TimelineServlet</servlet-name>
-		<url-pattern>/timeline</url-pattern>
+		<url-pattern>/showtimeline</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
-		<servlet-name>ResetServlet</servlet-name>
-		<url-pattern>/reset</url-pattern>
+		<servlet-name>SetTimeLineServlet</servlet-name>
+		<url-pattern>/timeline</url-pattern>
 	</servlet-mapping>
 </web-app>
