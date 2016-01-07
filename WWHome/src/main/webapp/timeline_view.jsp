@@ -30,7 +30,7 @@ div.three {
 }
 div.four {
     position: fixed;
-    bottom: 50;
+    bottom: 25;
     right: 636;
 }
 div.five {
