@@ -10,6 +10,7 @@
 <style>
 body {
 	background: url("img/testimage.gif") no-repeat;
+	background-color: black;
 	background-size: 1920px 1080px;
 }
 div.one {
@@ -59,7 +60,7 @@ div.six {
 		</div>
 	<% } if (timeline.isPeriod4()) { %>
 		<div class="four">
-			<img src="img/4.png" alt="Test" width="240" height="480">
+			<img src="img/city_final.png" alt="Test" width="240" height="480">
 		</div>
 	<% } if (timeline.isPeriod5()) { %>
 		<div class="five">
