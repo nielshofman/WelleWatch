@@ -7,6 +7,10 @@ public class Table {
 
 	private static final Table instance = new Table();
 	
+	private MyThread thread1;
+	private MyThread thread2;
+	private MyThread thread3;
+	
 	protected Map<String, Map<String, Boolean>> dataTable;
 	
 	protected Map<String, String> lastKnownChipOnLocation;
@@ -17,6 +21,13 @@ public class Table {
 
 	public synchronized void setLastKnownChipOnLocation(String location, String chipID) {
 		lastKnownChipOnLocation.put(location, chipID);
+		if (thread1.getLocation().equals(location)) {
+			thread1.run();
+		} else if (thread2.getLocation().equals(location)) {
+			thread2.run();
+		} else if (thread3.getLocation().equals(location)) {
+			thread3.run();
+		}
 	}
 	
 	private Map<String, String> fillLocationMap() {
@@ -28,6 +39,9 @@ public class Table {
 	}
 
 	public Table() {
+		this.thread1 = new MyThread("2");
+		this.thread2 = new MyThread("4");
+		this.thread3 = new MyThread("6");
 		this.dataTable = new HashMap<String, Map<String, Boolean>>();
 		this.lastKnownChipOnLocation = fillLocationMap();
 	}
@@ -42,5 +56,25 @@ public class Table {
 	
 	public static Table getInstance() {
 		return instance;
+	}
+	private class MyThread extends Thread{
+		private String location;
+		
+		public MyThread(String location) {
+			this.location = location;
+		}
+		
+		public String getLocation() {
+			return location;
+		}
+		
+		public void run() {
+			try {
+				Thread.sleep(20000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			Table.getInstance().setLastKnownChipOnLocation(location, "0");
+		}
 	}
 }
