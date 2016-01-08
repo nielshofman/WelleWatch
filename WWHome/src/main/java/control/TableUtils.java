@@ -33,7 +33,7 @@ public class TableUtils {
 	}
 	
 	public static synchronized void setLastKnownPosition(String location, String chipID) {
-		table.setLastKnownChipOnLocation(location, chipID);
+		table.setLastKnownChipOnLocation(location, chipID, true);
 	}
 	
 	public static synchronized Avatar getCharacter(String chipID) {

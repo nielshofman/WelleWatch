@@ -20,21 +20,25 @@ public class Table {
 		return lastKnownChipOnLocation;
 	}
 
-	public synchronized void setLastKnownChipOnLocation(String location, String chipID) {
+	public synchronized void setLastKnownChipOnLocation(String location, String chipID, boolean threads) {
 		lastKnownChipOnLocation.put(location, chipID);
-		if (threadsMade) {
+		if (threads) {
+			if (!threadsMade) {
+				this.thread1 = new MyThread("2", Table.getInstance());
+				this.thread2 = new MyThread("4", Table.getInstance());
+				this.thread3 = new MyThread("6", Table.getInstance());
+				threadsMade = true;
+			}
 			if (thread1.getLocation().equals(location)) {
+				this.thread1 = new MyThread("2", Table.getInstance());
 				thread1.start();
 			} else if (thread2.getLocation().equals(location)) {
+				this.thread2 = new MyThread("4", Table.getInstance());
 				thread2.start();
 			} else if (thread3.getLocation().equals(location)) {
+				this.thread3 = new MyThread("6", Table.getInstance());
 				thread3.start();
 			}
-		} else {
-			this.thread1 = new MyThread("2", Table.getInstance());
-			this.thread2 = new MyThread("4", Table.getInstance());
-			this.thread3 = new MyThread("6", Table.getInstance());
-			threadsMade = true;
 		}
 	}
 	
@@ -69,6 +73,7 @@ public class Table {
 		
 		public MyThread(String location, Table table) {
 			this.location = location;
+			this.table = table;
 		}
 		
 		public String getLocation() {
@@ -82,8 +87,7 @@ public class Table {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			System.out.println(table);
-			table.setLastKnownChipOnLocation(location, "0");
+			table.setLastKnownChipOnLocation(location, "0", false);
 		}
 	}
 }
