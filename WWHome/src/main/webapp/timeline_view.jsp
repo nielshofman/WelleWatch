@@ -7,6 +7,7 @@
 <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 <jsp:useBean id="timeline" class="model.Timeline" scope="request"></jsp:useBean>
 <title>Time line</title>
+<% if (!timeline.getChipID().equals("0")) { %>
 <style>
 body {
 	background: url("img/testimage.gif") no-repeat;
@@ -44,8 +45,24 @@ div.six {
     right: 10;
 }
 </style>
+<% } else { %>
+<style>
+body {
+	background: url("img/testimage2.gif") no-repeat;
+	background-color: black;
+	background-size: 1920px 1080px;
+}
+</style>
+<% } %>
+<script type="text/JavaScript">
+function timeRefresh(timeoutPeriod) 
+{
+	setTimeout("location.reload(true);",timeoutPeriod);
+}
+</script>
 </head>
-<body>
+
+<body onload="JavaScript:timeRefresh(5000);">
   	<% if (timeline.isPeriod1()) { %>
   		<div class="one">
 			

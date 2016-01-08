@@ -25,6 +25,7 @@ public class TableUtils {
 			result = new Timeline(map.get(chipID).get(ONE), map.get(chipID).get(TWO), map.get(chipID).get(THREE),
 				map.get(chipID).get(FOUR), map.get(chipID).get(FIVE), map.get(chipID).get(SIX));
 		}
+		result.setChipID(chipID);
 		return result;
 	}
 	

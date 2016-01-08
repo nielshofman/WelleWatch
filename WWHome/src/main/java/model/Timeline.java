@@ -8,6 +8,7 @@ public class Timeline {
 	private boolean period4;
 	private boolean period5;
 	private boolean period6;
+	private String chipID;
 
 	public Timeline() {
 		period1 = false;
@@ -26,6 +27,14 @@ public class Timeline {
 		this.period4 = period4;
 		this.period5 = period5;
 		this.period6 = period6;
+	}
+	
+	public void setChipID(String chipID) {
+		this.chipID = chipID;
+	}
+	
+	public String getChipID() {
+		return chipID;
 	}
 
 	public boolean isPeriod1() {
