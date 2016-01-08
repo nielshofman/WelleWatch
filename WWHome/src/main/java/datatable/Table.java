@@ -69,6 +69,7 @@ public class Table {
 		}
 		
 		public void run() {
+			System.out.println("Thread started");
 			try {
 				Thread.sleep(20000);
 			} catch (InterruptedException e) {
