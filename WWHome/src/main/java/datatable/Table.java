@@ -22,11 +22,11 @@ public class Table {
 	public synchronized void setLastKnownChipOnLocation(String location, String chipID) {
 		lastKnownChipOnLocation.put(location, chipID);
 		if (thread1.getLocation().equals(location)) {
-			thread1.run();
+			thread1.start();
 		} else if (thread2.getLocation().equals(location)) {
-			thread2.run();
+			thread2.start();
 		} else if (thread3.getLocation().equals(location)) {
-			thread3.run();
+			thread3.start();
 		}
 	}
 	
