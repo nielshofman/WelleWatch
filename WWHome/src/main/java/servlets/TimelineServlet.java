@@ -32,6 +32,7 @@ public class TimelineServlet extends HttpServlet{
 		}
 		if (chipID != null && location != null) {
 			timeline = TableUtils.getTimeline(chipID);
+			timeline.setChipID(chipID);
 			System.out.println(chipID);
 			request.setAttribute("timeline", timeline);
 			RequestDispatcher rd = request.getRequestDispatcher("timeline_view.jsp");
