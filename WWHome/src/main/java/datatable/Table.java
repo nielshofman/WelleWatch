@@ -10,6 +10,7 @@ public class Table {
 	private MyThread thread1;
 	private MyThread thread2;
 	private MyThread thread3;
+	private boolean threadsMade;
 	
 	protected Map<String, Map<String, Boolean>> dataTable;
 	
@@ -21,12 +22,19 @@ public class Table {
 
 	public synchronized void setLastKnownChipOnLocation(String location, String chipID) {
 		lastKnownChipOnLocation.put(location, chipID);
-		if (thread1.getLocation().equals(location)) {
-			thread1.start();
-		} else if (thread2.getLocation().equals(location)) {
-			thread2.start();
-		} else if (thread3.getLocation().equals(location)) {
-			thread3.start();
+		if (threadsMade) {
+			if (thread1.getLocation().equals(location)) {
+				thread1.start();
+			} else if (thread2.getLocation().equals(location)) {
+				thread2.start();
+			} else if (thread3.getLocation().equals(location)) {
+				thread3.start();
+			}
+		} else {
+			this.thread1 = new MyThread("2", Table.getInstance());
+			this.thread2 = new MyThread("4", Table.getInstance());
+			this.thread3 = new MyThread("6", Table.getInstance());
+			threadsMade = true;
 		}
 	}
 	
@@ -39,9 +47,7 @@ public class Table {
 	}
 
 	public Table() {
-		this.thread1 = new MyThread("2");
-		this.thread2 = new MyThread("4");
-		this.thread3 = new MyThread("6");
+		this.threadsMade = false;
 		this.dataTable = new HashMap<String, Map<String, Boolean>>();
 		this.lastKnownChipOnLocation = fillLocationMap();
 	}
@@ -59,8 +65,9 @@ public class Table {
 	}
 	private class MyThread extends Thread{
 		private String location;
+		private Table table;
 		
-		public MyThread(String location) {
+		public MyThread(String location, Table table) {
 			this.location = location;
 		}
 		
@@ -71,11 +78,12 @@ public class Table {
 		public void run() {
 			System.out.println("Thread started");
 			try {
-				MyThread.sleep(20000);
+				MyThread.sleep(15000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			Table.getInstance().setLastKnownChipOnLocation(location, "0");
+			System.out.println(table);
+			table.setLastKnownChipOnLocation(location, "0");
 		}
 	}
 }
