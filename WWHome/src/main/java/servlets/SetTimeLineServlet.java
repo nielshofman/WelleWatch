@@ -2,7 +2,6 @@ package servlets;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -28,9 +27,6 @@ public class SetTimeLineServlet extends HttpServlet {
 			System.out.println("hoi");
 			TableUtils.changeTableEntry(chipID, location);
 			TableUtils.setLastKnownPosition(location, chipID);
-			request.setAttribute("timeline", null);
-			RequestDispatcher rd = request.getRequestDispatcher("timeline_view.jsp");
-			rd.forward(request, response);
 		} else {
 			response.sendError(500);;
 		}
