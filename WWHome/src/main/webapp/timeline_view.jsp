@@ -48,7 +48,7 @@ div.six {
 <% } else { %>
 <style>
 body {
-	background: url("img/scan_screen.png") no-repeat;
+	background: url("img/hoi.png") no-repeat;
 	background-color: black;
 	background-size: 1920px 1080px;
 }
